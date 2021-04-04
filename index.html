@@ -3,6 +3,7 @@
   <head>
     <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   <body>
     <div class="container">
@@ -19,6 +20,7 @@ This is the fav songs of clones that break my bones and zrembotinapotthatisabout
       <br/>\
     <!--Find The Easter Egg!!!
 -->
+<div id="counter">1</div>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/lHT9Tq3wPoI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/LLzKGef7ykc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/T9NjRx2E6LE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -75,9 +77,19 @@ This is the fav songs of clones that break my bones and zrembotinapotthatisabout
 <iframe width="560" height="315" src="https://www.youtube.com/embed/2LvJe4vX8SI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/2vbN8a1110M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/brhCHcQ4_kE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/L1CU-4nBIfQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>      
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/L1CU-4nBIfQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>      
       <a href= "Secretlink.html" style="color: #fff;"> </a>
        <a href= "secretgraphic.html" style="color: #000000;"> </a>
     </div>
+    <script type="text/javascript">
+      $(function() {
+        setInterval(function() {
+          var counter = $("#counter");
+          var count = counter.text();
+          var countInt+= parseInt(count);
+          counter.text(countInt.toString());
+        }, 1000);
+      });
+    </script>
   </body>
 </html>
