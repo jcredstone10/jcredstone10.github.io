@@ -86,7 +86,7 @@ This is the fav songs of clones that break my bones and zrembotinapotthatisabout
         setInterval(function() {
           var counter = $("#counter");
           var count = counter.text();
-          var countInt+= parseInt(count);
+          var countInt = parseInt(count) + 1;
           counter.text(countInt.toString());
         }, 1000);
       });
