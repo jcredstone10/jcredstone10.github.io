@@ -20,8 +20,11 @@ This is the fav songs of clones that break my bones and zrembotinapotthatisabout
       <br/>\
     <!--Find The Easter Egg!!!
 -->
-<div id="secondsCounter"></div>
-<div id="minutesCounter"></div>
+<div>
+  You've been on my page for <span id="hoursCounter">00</span>:<span id="minutesCounter">00</span>:<span id="secondsCounter"></span>
+</div>
+
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/lHT9Tq3wPoI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/LLzKGef7ykc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/T9NjRx2E6LE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -86,19 +89,26 @@ This is the fav songs of clones that break my bones and zrembotinapotthatisabout
       $(function() {
         var secondsCounter = $("#secondsCounter");
         var minutesCounter = $("#minutesCounter");
+        var hoursCounter = $("#hoursCounter");
         
         var secondsCount = 0;
         var minutesCount = 0;
+        var hoursCount = 0;
 
         setInterval(function() {
           secondsCount++;
-          secondsCounter.text(secondsCount.toString() + " seconds");
+          secondsCounter.text(secondsCount.toString());
         }, 1000);
         
         setInterval(function() {
           minutesCount++;
-          minutesCounter.text(minutesCount.toString() + " minutes");
+          minutesCounter.text(minutesCount.toString());
         }, 60000);
+        
+        setInterval(function() {
+          hoursCount++;
+          hoursCounter.text(hoursCount.toString()));
+        }, 360000);
       });
     </script>
   </body>
