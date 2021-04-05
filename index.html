@@ -96,13 +96,13 @@ This is the fav songs of clones that break my bones and zrembotinapotthatisabout
         var hoursCount = 0;
 
         setInterval(function() {
-          secondsCount++;
-          secondsCounter.text(secondsCount.toString());
+          var newSeconds = secondsCount++ % 60;
+          secondsCounter.text(newSeconds.toString());
         }, 1000);
         
         setInterval(function() {
-          minutesCount++;
-          minutesCounter.text(minutesCount.toString());
+          var newMinutes = minutesCount++ % 60;
+          minutesCounter.text(newMinutes.toString());
         }, 60000);
         
         setInterval(function() {
