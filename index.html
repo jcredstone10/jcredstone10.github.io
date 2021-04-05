@@ -88,31 +88,24 @@ This is the fav songs of clones that break my bones and zrembotinapotthatisabout
     <script type="text/javascript">
       $(function() {
         const ONE_SECOND_MILLISECONDS = 1000;
-        const ONE_MINUTE_MILLISECONDS = 60_000;
-        const ONE_HOUR_MILLISECONDS = 3_600_000;
         
         var secondsCounter = $("#secondsCounter");
         var minutesCounter = $("#minutesCounter");
         var hoursCounter = $("#hoursCounter");
         
         var secondsCount = 0;
-        var minutesCount = 0;
-        var hoursCount = 0;
 
         setInterval(function() {
           var newSeconds = secondsCount++ % 60;
           secondsCounter.text(newSeconds.toString().padStart(2, '0'));
-        }, ONE_SECOND_MILLISECONDS);
-        
-        setInterval(function() {
-          var newMinutes = minutesCount++ % 60;
+          
+          var newTotalMinutes = Math.trunc(secondsCount / 60)
+          var newMinutes = newTotalMinutes % 60;
           minutesCounter.text(newMinutes.toString().padStart(2, '0'));
-        }, ONE_MINUTE_MILLISECONDS);
-        
-        setInterval(function() {
-          hoursCount++;
-          hoursCounter.text(hoursCount.toString().padStart(2, '0'));
-        }, ONE_HOUR_MILLISECONDS);
+          
+          var hours = Math.trunc(newTotalMinutes / 60);
+          hoursCounter.text(hours.toString().padStart(2, '0'));
+        }, ONE_SECOND_MILLISECONDS);
       });
     </script>
   </body>
