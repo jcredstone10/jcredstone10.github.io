@@ -21,7 +21,7 @@ This is the fav songs of clones that break my bones and zrembotinapotthatisabout
     <!--Find The Easter Egg!!!
 -->
 <div>
-  You've been on my page for <span id="hoursCounter">00</span>:<span id="minutesCounter">00</span>:<span id="secondsCounter"></span>
+  You've been on my page for <span id="hoursCounter">00</span>:<span id="minutesCounter">00</span>:<span id="secondsCounter">00</span>
 </div>
 
 
@@ -87,6 +87,10 @@ This is the fav songs of clones that break my bones and zrembotinapotthatisabout
     </div>
     <script type="text/javascript">
       $(function() {
+        const ONE_SECOND_MILLISECONDS = 1000;
+        const ONE_MINUTE_MILLISECONDS = 60_000;
+        const ONE_HOUR_MILLISECONDS = 3_600_000;
+        
         var secondsCounter = $("#secondsCounter");
         var minutesCounter = $("#minutesCounter");
         var hoursCounter = $("#hoursCounter");
@@ -97,18 +101,18 @@ This is the fav songs of clones that break my bones and zrembotinapotthatisabout
 
         setInterval(function() {
           var newSeconds = secondsCount++ % 60;
-          secondsCounter.text(newSeconds.toString());
-        }, 1000);
+          secondsCounter.text(newSeconds.toString().padStart(2, '0'));
+        }, ONE_SECOND_MILLISECONDS);
         
         setInterval(function() {
           var newMinutes = minutesCount++ % 60;
-          minutesCounter.text(newMinutes.toString());
-        }, 60000);
+          minutesCounter.text(newMinutes.toString().padStart(2, '0'));
+        }, ONE_MINUTE_MILLISECONDS);
         
         setInterval(function() {
           hoursCount++;
-          hoursCounter.text(hoursCount.toString());
-        }, 360000);
+          hoursCounter.text(hoursCount.toString().padStart(2, '0'));
+        }, ONE_HOUR_MILLISECONDS);
       });
     </script>
   </body>
